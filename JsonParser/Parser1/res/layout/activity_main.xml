@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="name"/>
+
+    <EditText
+        android:id="@+id/et_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="gender"/>
+
+    <Button
+        android:id="@+id/btn_to_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="json변환 후 서버 전송"/>
+
+    <TextView
+        android:id="@+id/tv_json"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="변환 결과값" />
+
+    <Button
+        android:id="@+id/btn_to_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서버에서 json 파싱"/>
+
+    <TextView
+        android:id="@+id/tv_parsing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="변환 결과값"/>
+
+</LinearLayout>
