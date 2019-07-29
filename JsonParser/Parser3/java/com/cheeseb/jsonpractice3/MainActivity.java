@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
                     String list = jsonObject.getString("list");
                     JSONArray jsonArray = new JSONArray(list);
                     for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject subjsonObject = jsonArray.getJSONObject(i);
-                        valueList.add(subjsonObject.getString(et_key.getText() + ""));
+                        JSONObject subJsonObject = jsonArray.getJSONObject(i);
+                        valueList.add(subJsonObject.getString(et_key.getText() + ""));
                     }
                     tv_parsing.setText(valueList + "");
                 } catch (JSONException e) {
