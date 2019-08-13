@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     LukaSharingPreferences pref;
 
     @BindView(R.id.btn_next) Button btnNext;
+    public static String BROADCAST_ACTION = "com.cheeseb.example2.action.SEND";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent();
-                intent.setAction("com.cheeseb.example2.ACTION_SEND");
+                intent.addCategory(Intent.CATEGORY_DEFAULT);
                 intent.setFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
                 intent.setComponent(new ComponentName("com.cheeseb.example2", "com.cheeseb.example2.MainActivity"));
 
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
                 sendBroadcast(intent);
 
-                Toast.makeText(MainActivity.this, "데이터 전송 완료", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "데이터 전송", Toast.LENGTH_SHORT).show();
 
             }
         });

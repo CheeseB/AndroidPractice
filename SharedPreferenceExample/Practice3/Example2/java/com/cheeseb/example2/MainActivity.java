@@ -27,20 +27,20 @@ public class MainActivity extends AppCompatActivity {
     Fragment fm;
     FragmentManager manager;
 
+    public static String BROADCAST_ACTION = "com.cheeseb.example2.action.SEND";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-        init();
     }
 
     @Override
     protected void onResume(){
         super.onResume();
         myRegisterReceiver();
+        init();
     }
 
     private void init() {
@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
         if(mReceiver != null) return;
 
         IntentFilter filter = new IntentFilter();
-        filter.addAction("com.cheeseb.example2.action.SEND");
+        filter.addAction(BROADCAST_ACTION);
+        filter.addCategory(Intent.CATEGORY_DEFAULT);
 
         mReceiver = new BroadcastReceiver() {
             @Override
