@@ -1,1 +1,1 @@
-/* SharedPrefernece 구현 */
+/* SharedPreference 구현 */

@@ -34,8 +34,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        myRegisterReceiver();
         init();
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        myRegisterReceiver();
     }
 
     private void init() {
@@ -47,12 +52,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop(){
-        super.onStop();
+    protected void onPause(){
+        super.onPause();
         myUnregisterReceiver();
     }
 
     private void myRegisterReceiver(){
+
         if(mReceiver != null) return;
 
         IntentFilter filter = new IntentFilter();
