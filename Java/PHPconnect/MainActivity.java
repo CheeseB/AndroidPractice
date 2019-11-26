@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         tv_outPut = (TextView) findViewById(R.id.tv_outPut);
 
         // URL 설정.
-        String url = "http://210.117.181.123:8080/test.php";
+        String url = "http://test.php";
 
         ContentValues values = new ContentValues();
         values.put("ques","hmm i don't know what should i write on this line.. uh i'm just _ .");
